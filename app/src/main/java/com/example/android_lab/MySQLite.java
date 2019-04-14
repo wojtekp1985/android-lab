@@ -62,13 +62,13 @@ public class MySQLite extends SQLiteOpenHelper {
         db.close();
         return i; }
 
-    public Animal pobierz(int id){
+    public Animal pobierz(int _id){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query("animals", //a. table name
                  new String[] { "_id",
                          "gatunek", "kolor", "wielkosc", "opis" }, // b. column names
                 "_id = ?", // c. selections
-                 new String[] { String.valueOf(id) }, // d. selections args
+                 new String[] { String.valueOf(_id) }, // d. selections args
                  null, // e. group by
                  null, // f. having
                  null, // g. order by
