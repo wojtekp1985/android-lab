@@ -43,10 +43,10 @@ public class MySQLite extends SQLiteOpenHelper {
         db.insert("animals", null, values);
         db.close(); }
 
-    public void usun(String id) {
+    public void usun(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete("animals", "_id = ?",
-                new String[] { id });
+                new String[] {String.valueOf(id)});
         db.close(); }
 
 
